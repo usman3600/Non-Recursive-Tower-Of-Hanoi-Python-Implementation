@@ -4,7 +4,6 @@ conditions = {
     3:{"numbers":0, "disks":[]},
     "visited":[-1]
 }
-last_peg = 2
 def non_recur_tower_of_hanoi(disks, A, B, C):
     number_of_moves = (2**disks)-1
     conditions[1]["numbers"] = disks
@@ -47,7 +46,6 @@ def find_disk(Condions):
     pegs = {1, 2, 3}
     for peg in range(1, 4):
         avail_pegs = list(pegs-{peg})
-        #print(conditions)
         if conditions[peg]["numbers"]:
             disks = conditions[peg]["disks"][0]
             if check_pegs_disk(avail_pegs[0], disks) and disks != conditions["visited"][-1]:
